@@ -1,0 +1,34 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Idealista Sample Feed//EN
+BEGIN:VEVENT
+UID:1@idealista.com
+DTSTAMP:20250824T130229Z
+DTSTART:20250824T130229Z
+DTEND:20250824T140229Z
+SUMMARY:Lisbon Chiado – 2BR Luxe Apartment (€2,500/mo)
+LOCATION:Chiado, Lisbon
+DESCRIPTION:See more at https://www.idealista.com/en/inmueble/123456/
+URL:https://www.idealista.com/en/inmueble/123456/
+END:VEVENT
+BEGIN:VEVENT
+UID:2@idealista.com
+DTSTAMP:20250824T130229Z
+DTSTART:20250825T130229Z
+DTEND:20250825T140229Z
+SUMMARY:Lisbon Avenida da Liberdade – 3BR Penthouse (€4,200/mo)
+LOCATION:Avenida da Liberdade, Lisbon
+DESCRIPTION:See more at https://www.idealista.com/en/inmueble/789012/
+URL:https://www.idealista.com/en/inmueble/789012/
+END:VEVENT
+BEGIN:VEVENT
+UID:3@idealista.com
+DTSTAMP:20250824T130229Z
+DTSTART:20250826T130229Z
+DTEND:20250826T140229Z
+SUMMARY:Lisbon Parque das Nações – Modern 1BR (€1,800/mo)
+LOCATION:Parque das Nações, Lisbon
+DESCRIPTION:See more at https://www.idealista.com/en/inmueble/345678/
+URL:https://www.idealista.com/en/inmueble/345678/
+END:VEVENT
+END:VCALENDAR
