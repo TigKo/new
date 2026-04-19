@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Helios — An Interactive 3D Solar System</title>
+    <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='10' fill='%23ffbb33'/></svg>" />
+    <link rel="stylesheet" href="./src/styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <canvas id="scene"></canvas>
+
+    <!-- Cinematic loading veil -->
+    <div id="loader">
+      <div class="loader-inner">
+        <div class="loader-rings">
+          <div></div><div></div><div></div>
+        </div>
+        <div class="loader-title">HELIOS</div>
+        <div class="loader-sub">Calibrating ephemerides…</div>
+        <div class="loader-bar"><div id="loader-bar-fill"></div></div>
+      </div>
+    </div>
+
+    <!-- Heads-up display -->
+    <div id="hud" class="hidden">
+      <div id="hud-top">
+        <div class="hud-brand">
+          <div class="brand-mark">☉</div>
+          <div class="brand-text">
+            <div class="brand-title">HELIOS</div>
+            <div class="brand-sub">Interactive Solar System</div>
+          </div>
+        </div>
+        <div id="target-card">
+          <div class="tc-eyebrow">TRACKING</div>
+          <div class="tc-name" id="tc-name">The Sun</div>
+          <div class="tc-stats">
+            <div><span>Mass</span><b id="tc-mass">1.989 × 10³⁰ kg</b></div>
+            <div><span>Day</span><b id="tc-day">25.4 d</b></div>
+            <div><span>Distance</span><b id="tc-dist">0 AU</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="hud-bottom">
+        <div id="timeline">
+          <div class="tl-row">
+            <div class="tl-label">
+              <span class="tl-eyebrow">EPOCH</span>
+              <span id="tl-date">J2000.0</span>
+            </div>
+            <div class="tl-controls">
+              <button id="btn-rewind" title="Rewind">«</button>
+              <button id="btn-play" title="Play / Pause">▶</button>
+              <button id="btn-forward" title="Fast forward">»</button>
+              <button id="btn-now" title="Return to present">⌂</button>
+            </div>
+          </div>
+          <input id="tl-slider" type="range" min="-5000" max="5000" step="0.01" value="0" />
+          <div class="tl-scale">
+            <span>−5000 yr</span>
+            <span>present</span>
+            <span>+5000 yr</span>
+          </div>
+        </div>
+
+        <div id="legend">
+          <div><kbd>L</kbd> labels</div>
+          <div><kbd>O</kbd> orbits</div>
+          <div><kbd>M</kbd> audio</div>
+          <div><kbd>R</kbd> reset view</div>
+          <div><kbd>Space</kbd> play/pause</div>
+          <div><kbd>Click</kbd> fly to planet</div>
+        </div>
+      </div>
+
+      <!-- 3D labels layer -->
+      <div id="labels"></div>
+
+      <!-- Audio hint -->
+      <div id="audio-hint">Click anywhere to begin — audio enables on interaction</div>
+    </div>
+  </body>
+  <script type="module" src="./src/main.js"></script>
+</html>
