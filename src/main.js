@@ -154,6 +154,13 @@ const cam = {
   enterTime: 0,
 };
 
+// Debug hook: window.__flyTo("saturn")
+window.__flyTo = (id) => {
+  const p = planetsById[id];
+  if (p) flyTo(p);
+};
+window.__planets = planetsById;
+
 function flyTo(planet) {
   // Switch camera to smoothly approach the planet, then drop into orbit mode.
   cam.mode = "flying";

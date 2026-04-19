@@ -74,7 +74,7 @@ export function createSun() {
     opacity: 0.55,
   });
   const halo = new THREE.Sprite(haloMat);
-  halo.scale.setScalar(SCALE.sunRadius * 2.2);
+  halo.scale.setScalar(SCALE.sunRadius * 1.8);
   group.add(halo);
 
   // Soft outer glow (more subtle than the near halo)
@@ -87,7 +87,7 @@ export function createSun() {
     opacity: 0.08,
   });
   const godray = new THREE.Sprite(godrayMat);
-  godray.scale.setScalar(SCALE.sunRadius * 4.5);
+  godray.scale.setScalar(SCALE.sunRadius * 3.5);
   group.add(godray);
 
   // Actual point light – decay 0 for artistic uniform lighting across the
