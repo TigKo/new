@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-poppins), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.01em;
+    color: #1E293B;
+  }
+  h1 { font-weight: 600; }
+  h2 { font-weight: 600; }
+  h3 { font-weight: 500; }
+
+  *:focus-visible {
+    outline: 2px solid #0F766E;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: #0F766E;
+    color: #F8FAFC;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-6 lg:px-10;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md bg-charcoal-800 px-6 py-3 text-sm font-medium text-white transition-colors duration-200 hover:bg-charcoal-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-silver-300 bg-white px-6 py-3 text-sm font-medium text-charcoal-800 transition-colors duration-200 hover:border-charcoal-700 hover:bg-silver-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+
+  .input-base {
+    @apply w-full rounded-md border border-silver-300 bg-white px-4 py-3 text-sm text-charcoal-800 placeholder:text-silver-400 transition-colors duration-200 hover:border-silver-400 focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20;
+  }
+
+  .label-base {
+    @apply block text-xs font-medium uppercase tracking-wider text-charcoal-700;
+  }
+}
+
+@layer utilities {
+  .skeleton {
+    background: linear-gradient(90deg, #E2E8F0 0%, #F1F5F9 50%, #E2E8F0 100%);
+    background-size: 200% 100%;
+    animation: skeleton 1.4s ease-in-out infinite;
+  }
+
+  @keyframes skeleton {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .fade-in {
+    animation: fadeIn 250ms ease-out both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Hide scrollbar utility for horizontal carousel */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
